@@ -1,9 +1,8 @@
-package io.github.bimlibik.pyfia
+package io.github.bimlibik.pyfia.ui
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.HtmlCompat
+import io.github.bimlibik.pyfia.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
