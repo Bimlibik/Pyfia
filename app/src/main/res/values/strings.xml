@@ -3,7 +3,7 @@
 
     <!-- Home Fragment -->
     <string name="label_description">твой помощник для подготовки к интервью</string>
-    <string name="label_tutorial">Учебник</string>
+    <string name="label_tutorial_default">Учебник</string>
     <string name="label_tutorial_description">подтянуть теорию</string>
     <string name="label_tests">Тесты</string>
     <string name="label_tests_description">экспресс проверка знаний</string>
@@ -17,6 +17,21 @@
         <item>Java</item>
         <item>Kotlin</item>
         <item>Android</item>
+    </string-array>
+
+    <!-- Topic -->
+    <string name="label_tutorial">Учебник %s</string>
+    <string-array name="topics">
+        <item>Тема 1</item>
+        <item>Тема 2</item>
+        <item>Тема 3</item>
+        <item>Тема 4</item>
+        <item>Тема 5</item>
+        <item>Тема 6</item>
+        <item>Тема 7</item>
+        <item>Тема 8</item>
+        <item>Тема 9</item>
+        <item>Тема 10</item>
     </string-array>
 
     <!-- Training -->

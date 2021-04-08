@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import io.github.bimlibik.pyfia.databinding.ItemTutorialBinding
 
-class TutorialsAdapter
+class TutorialsAdapter(private val callback: TutorialsFragment.TutorialCallback)
     : ListAdapter<String, TutorialsAdapter.TutorialsViewHolder>(TutorialsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TutorialsViewHolder {
@@ -26,6 +26,9 @@ class TutorialsAdapter
         fun bind(position: Int) {
             val item = getItem(position)
             binding.title = item
+            itemView.setOnClickListener {
+                callback.onTutorialClick(item)
+            }
         }
     }
 

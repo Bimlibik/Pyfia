@@ -38,7 +38,7 @@
             <include
                 android:id="@+id/btn_tutorial"
                 layout="@layout/button_fragment_home"
-                app:title="@{@string/label_tutorial}"
+                app:title="@{@string/label_tutorial_default}"
                 app:description="@{@string/label_tutorial_description}" />
 
             <include

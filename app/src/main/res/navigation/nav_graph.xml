@@ -20,8 +20,12 @@
     <fragment
         android:id="@+id/tutorials_fragment"
         android:name="io.github.bimlibik.pyfia.ui.tutorials.TutorialsFragment"
-        android:label="@string/label_tutorial"
-        tools:layout="@layout/fragment_tutorials"/>
+        android:label="@string/label_tutorial_default"
+        tools:layout="@layout/fragment_tutorials">
+        <action
+            android:id="@+id/action_tutorials_to_topics"
+            app:destination="@id/topics_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/training_fragment"
         android:name="io.github.bimlibik.pyfia.ui.training.TrainingFragment"
@@ -38,6 +42,15 @@
         tools:layout="@layout/fragment_new_training">
         <argument
             android:name="topic"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/topics_fragment"
+        android:name="io.github.bimlibik.pyfia.ui.topic.TopicsFragment"
+        android:label="TopicsFragment"
+        tools:layout="@layout/fragment_topics">
+        <argument
+            android:name="title"
             app:argType="string" />
     </fragment>
 </navigation>

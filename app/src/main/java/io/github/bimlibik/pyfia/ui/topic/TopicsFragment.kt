@@ -1,4 +1,4 @@
-package io.github.bimlibik.pyfia.ui.tutorials
+package io.github.bimlibik.pyfia.ui.topic
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,20 +7,23 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import io.github.bimlibik.pyfia.R
-import io.github.bimlibik.pyfia.databinding.FragmentTutorialsBinding
+import io.github.bimlibik.pyfia.databinding.FragmentTopicsBinding
 
-class TutorialsFragment : Fragment() {
+class TopicsFragment : Fragment() {
 
-    private lateinit var binding: FragmentTutorialsBinding
+    private lateinit var binding: FragmentTopicsBinding
+
+    private val args: TopicsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTutorialsBinding.inflate(inflater, container, false)
+        binding = FragmentTopicsBinding.inflate(inflater, container, false)
+        binding.title = args.title
         return binding.root
     }
 
@@ -32,9 +35,9 @@ class TutorialsFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        val list: List<String> = resources.getStringArray(R.array.tutorials).toList()
-        binding.tutorials.adapter = TutorialsAdapter(tutorialCallback)
-        (binding.tutorials.adapter as TutorialsAdapter).submitList(list)
+        val list: List<String> = resources.getStringArray(R.array.topics).toList()
+        binding.topics.adapter = TopicsAdapter()
+        (binding.topics.adapter as TopicsAdapter).submitList(list)
     }
 
     private fun setupToolbarMenu() {
@@ -49,17 +52,5 @@ class TutorialsFragment : Fragment() {
         binding.toolbar.setNavigationOnClickListener { view ->
             view.findNavController().navigateUp()
         }
-    }
-
-    private val tutorialCallback = object : TutorialCallback {
-        override fun onTutorialClick(item: String) {
-            val action = TutorialsFragmentDirections.actionTutorialsToTopics(item)
-            findNavController().navigate(action)
-        }
-
-    }
-
-    interface TutorialCallback {
-        fun onTutorialClick(item: String)
     }
 }
