@@ -10,4 +10,13 @@
     <string name="label_training">Тренировка</string>
     <string name="label_training_description">вопросы с собеседований</string>
 
+    <!-- Tutorials Fragment -->
+    <string-array name="tutorials">
+        <item>Алгоритмы</item>
+        <item>Структуры данных</item>
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Android</item>
+    </string-array>
+
 </resources>

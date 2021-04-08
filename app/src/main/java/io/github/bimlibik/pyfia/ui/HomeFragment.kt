@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import io.github.bimlibik.pyfia.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,6 +23,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navigate()
+    }
 
+    private fun navigate() {
+        binding.btnTutorial.btn.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeToTutorials()
+            findNavController().navigate(action)
+        }
     }
 }
