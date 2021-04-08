@@ -26,5 +26,18 @@
         android:id="@+id/training_fragment"
         android:name="io.github.bimlibik.pyfia.ui.training.TrainingFragment"
         android:label="TrainingFragment"
-        tools:layout="@layout/fragment_training"/>
+        tools:layout="@layout/fragment_training">
+        <action
+            android:id="@+id/action_training_to_new_training"
+            app:destination="@id/new_training_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/new_training_fragment"
+        android:name="io.github.bimlibik.pyfia.ui.new_training.NewTrainingFragment"
+        android:label="NewTrainingFragment"
+        tools:layout="@layout/fragment_new_training">
+        <argument
+            android:name="topic"
+            app:argType="string" />
+    </fragment>
 </navigation>

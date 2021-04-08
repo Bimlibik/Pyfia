@@ -19,4 +19,9 @@
         <item>Android</item>
     </string-array>
 
+    <!-- Training -->
+    <string name="label_new_training">Тренировка %s</string>
+    <string name="label_answer_counter">%d/%d</string>
+    <string name="label_timer">10s</string>
+
 </resources>

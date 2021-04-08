@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import io.github.bimlibik.pyfia.R
 import io.github.bimlibik.pyfia.databinding.FragmentTrainingBinding
 
@@ -32,7 +33,7 @@ class TrainingFragment : Fragment() {
 
     private fun setupAdapter() {
         val list: List<String> = resources.getStringArray(R.array.tutorials).toList()
-        binding.tutorials.adapter = TrainingAdapter()
+        binding.tutorials.adapter = TrainingAdapter(trainingCallback)
         (binding.tutorials.adapter as TrainingAdapter).submitList(list)
     }
 
@@ -48,5 +49,17 @@ class TrainingFragment : Fragment() {
         binding.toolbar.setNavigationOnClickListener { view ->
             view.findNavController().navigateUp()
         }
+    }
+
+    private val trainingCallback = object : TrainingCallback {
+        override fun onTrainingClick(topic: String) {
+            val action = TrainingFragmentDirections.actionTrainingToNewTraining(topic)
+            findNavController().navigate(action)
+        }
+
+    }
+
+    interface TrainingCallback {
+        fun onTrainingClick(topic: String)
     }
 }
