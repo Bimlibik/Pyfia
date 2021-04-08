@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_home_to_tutorials"
             app:destination="@id/tutorials_fragment" />
+        <action
+            android:id="@+id/action_home_to_training"
+            app:destination="@id/training_fragment" />
     </fragment>
     <fragment
         android:id="@+id/tutorials_fragment"
         android:name="io.github.bimlibik.pyfia.ui.tutorials.TutorialsFragment"
         android:label="@string/label_tutorial"
         tools:layout="@layout/fragment_tutorials"/>
+    <fragment
+        android:id="@+id/training_fragment"
+        android:name="io.github.bimlibik.pyfia.ui.training.TrainingFragment"
+        android:label="TrainingFragment"
+        tools:layout="@layout/fragment_training"/>
 </navigation>
