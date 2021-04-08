@@ -1,4 +1,4 @@
-package io.github.bimlibik.pyfia.ui
+package io.github.bimlibik.pyfia.ui.tutorials
 
 import android.os.Bundle
 import android.view.LayoutInflater

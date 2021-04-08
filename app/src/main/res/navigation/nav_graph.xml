@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/tutorials_fragment"
-        android:name="io.github.bimlibik.pyfia.ui.TutorialsFragment"
+        android:name="io.github.bimlibik.pyfia.ui.tutorials.TutorialsFragment"
         android:label="@string/label_tutorial"
         tools:layout="@layout/fragment_tutorials"/>
 </navigation>
