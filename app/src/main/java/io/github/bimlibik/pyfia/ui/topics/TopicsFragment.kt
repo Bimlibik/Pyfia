@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import io.github.bimlibik.pyfia.R
 import io.github.bimlibik.pyfia.databinding.FragmentTopicsBinding
@@ -36,7 +37,7 @@ class TopicsFragment : Fragment() {
 
     private fun setupAdapter() {
         val list: List<String> = resources.getStringArray(R.array.topics).toList()
-        binding.topics.adapter = TopicsAdapter()
+        binding.topics.adapter = TopicsAdapter(topicCallback)
         (binding.topics.adapter as TopicsAdapter).submitList(list)
     }
 
@@ -52,5 +53,17 @@ class TopicsFragment : Fragment() {
         binding.toolbar.setNavigationOnClickListener { view ->
             view.findNavController().navigateUp()
         }
+    }
+
+    private val topicCallback: TopicCallback = object : TopicCallback {
+        override fun onTopicClick(item: String) {
+            val action = TopicsFragmentDirections.actionTopicsToTopic(args.title, item)
+            findNavController().navigate(action)
+        }
+
+    }
+
+    interface TopicCallback {
+        fun onTopicClick(item: String)
     }
 }

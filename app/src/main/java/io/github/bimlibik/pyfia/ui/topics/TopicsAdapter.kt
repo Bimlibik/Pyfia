@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import io.github.bimlibik.pyfia.databinding.ItemTopicBinding
 
-class TopicsAdapter
+class TopicsAdapter(private val callback: TopicsFragment.TopicCallback)
     : ListAdapter<String, TopicsAdapter.TopicsViewHolder>(TopicsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopicsViewHolder {
@@ -26,6 +26,10 @@ class TopicsAdapter
         fun bind(position: Int) {
             val item = getItem(position)
             binding.title = "${position + 1}. $item"
+
+            itemView.setOnClickListener {
+                callback.onTopicClick(item)
+            }
         }
     }
 
