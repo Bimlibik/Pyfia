@@ -1,4 +1,4 @@
-package io.github.bimlibik.pyfia.ui.topic
+package io.github.bimlibik.pyfia.ui.topics
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/topics_fragment"
-        android:name="io.github.bimlibik.pyfia.ui.topic.TopicsFragment"
+        android:name="io.github.bimlibik.pyfia.ui.topics.TopicsFragment"
         android:label="TopicsFragment"
         tools:layout="@layout/fragment_topics">
         <argument
