@@ -27,6 +27,13 @@ class TutorialsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbarMenu()
         setupToolbarNavigation()
+        setupAdapter()
+    }
+
+    private fun setupAdapter() {
+        val list: List<String> = resources.getStringArray(R.array.tutorials).toList()
+        binding.tutorials.adapter = TutorialsAdapter()
+        (binding.tutorials.adapter as TutorialsAdapter).submitList(list)
     }
 
     private fun setupToolbarMenu() {
